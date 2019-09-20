@@ -36,10 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GrapeCity.WPF.CalcEngine, Version=2.0.2019.417, Culture=neutral, PublicKeyToken=6ccb469776ba232c, processorArchitecture=MSIL" />
-    <Reference Include="GrapeCity.WPF.Excel, Version=2.0.2019.417, Culture=neutral, PublicKeyToken=6ccb469776ba232c, processorArchitecture=MSIL" />
-    <Reference Include="GrapeCity.WPF.PDF, Version=2.0.2019.417, Culture=neutral, PublicKeyToken=6ccb469776ba232c, processorArchitecture=MSIL" />
-    <Reference Include="grapecity.wpf.spreadgrid, Version=2.0.2019.417, Culture=neutral, PublicKeyToken=5c5c8ff7a6858ccc, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.WPF.CalcEngine, Version=2.0.2019.0821, Culture=neutral, PublicKeyToken=6ccb469776ba232c, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.WPF.Excel, Version=2.0.2019.0821, Culture=neutral, PublicKeyToken=6ccb469776ba232c, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.WPF.PDF, Version=2.0.2019.0821, Culture=neutral, PublicKeyToken=6ccb469776ba232c, processorArchitecture=MSIL" />
+    <Reference Include="grapecity.wpf.spreadgrid, Version=2.0.2019.0821, Culture=neutral, PublicKeyToken=5c5c8ff7a6858ccc, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
