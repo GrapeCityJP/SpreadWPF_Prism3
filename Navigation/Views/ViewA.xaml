@@ -1,0 +1,62 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:sg="http://schemas.grapecity.com/windows/spreadgrid/2012"
+             xmlns:local="clr-namespace:Navigation.Views"
+             x:Class="Navigation.Views.ViewA"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding ShowDetailRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowContent>
+                    <local:Detail />
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <sg:GcSpreadGrid Grid.Row="0" x:Name="gcSpreadGrid1"
+            HorizontalAlignment="Left" VerticalAlignment="Top" 
+            ItemsSource="{Binding Outline}" 
+            SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" 
+            AutoGenerateColumns="False" SelectionUnit="Row" 
+            Margin="10,0,10,0" HorizontalScrollBarVisibility="Hidden">
+            <sg:GcSpreadGrid.Columns>
+                <sg:Column Width="80">
+                    <sg:Column.DataField>
+                        <sg:PropertyDataField Property="Class"/>
+                    </sg:Column.DataField>
+                </sg:Column>
+                <sg:Column Width="80">
+                    <sg:Column.DataField>
+                        <sg:PropertyDataField Property="Quantity"/>
+                    </sg:Column.DataField>
+                    <sg:Column.CellType>
+                        <sg:NumberCellType FieldSet="###,##0,,,-," SpinButtonVisibility="NotShow"/>
+                    </sg:Column.CellType>
+                </sg:Column>
+                <sg:Column Width="80">
+                    <sg:Column.DataField>
+                        <sg:PropertyDataField Property="Amount"/>
+                    </sg:Column.DataField>
+                    <sg:Column.CellType>
+                        <sg:NumberCellType FieldSet="###,##0,,,-," SpinButtonVisibility="NotShow"/>
+                    </sg:Column.CellType>
+                </sg:Column>
+            </sg:GcSpreadGrid.Columns>
+        </sg:GcSpreadGrid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Margin="10" Command="{Binding ShowDetailCommand}" Content="明細の表示" Width="80" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
